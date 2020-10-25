@@ -1,19 +1,15 @@
-// const data = new FormData();
+const data = new FormData();
 
-// data.append("name", "Aman");
-// data.append("age", "27");
+data.append("name", "Aman");
+data.append("age", "27");
 
-// console.log(data);
 
-// const xhr = new XMLHttpRequest();
-// xhr.open('POST', 'form-data-web-api/myPhp.php', true);
-// xhr.send("orem=ipsum&name=binny");
-
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         console.log( this.responseText );
     }
 };
-xhttp.open('POST', 'form-data-web-api/myPhp.php', true);
-console.log(xhttp.send());
+xhr.open('POST', 'http://localhost:3000/welcome', true); // use server path (/welcome)
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.send();
