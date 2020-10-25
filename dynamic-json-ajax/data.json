@@ -1,0 +1,11 @@
+{
+    "model": "Apple",
+    "ram": 8,
+    "storage": 128,
+    "sensors": [
+        "proximity",
+        "compass",
+        "fingerprint"
+
+    ]
+}
