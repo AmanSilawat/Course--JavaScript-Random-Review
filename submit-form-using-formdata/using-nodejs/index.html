@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sending Data</title>
+        <style>
+            #form-msg {
+                background: rgba(255, 232, 232);
+                border: 1px solid red;
+                color: red;
+                display: none;
+                font-style: 12px;
+                margin-bottom: 10px;
+                font-weight: bold;
+                padding: 10px 25px;
+                min-width: 250px;
+            }
+            input {
+                padding: 5px;
+                margin-bottom: 10px;
+            }
+            label {
+                width: 70px;
+                display: inline-block;
+            }
+            #btnSubmit {
+                padding: 5px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Ajax Form</h1>
+        <form class="form" id="myForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" spellcheck="false" />
+
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" spellcheck="false" />
+
+            <button submit="submit" id="btnSubmit">LOGIN</button>
+        </form>
+        <script src="app.js"></script>
+    </body>
+</html>
