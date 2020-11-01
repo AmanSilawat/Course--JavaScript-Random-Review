@@ -18,6 +18,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/data-analyst', function (req, res) {
+    console.log(req.body);
     res.send(res.json(req.body));
 });
 

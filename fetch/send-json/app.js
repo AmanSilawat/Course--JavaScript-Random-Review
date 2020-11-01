@@ -5,7 +5,7 @@ const person = {
 
 // send json data
 fetch('http://localhost:3030/data-analyst', {
-    method: 'post',
+    method: 'POST',
     body: JSON.stringify(person),
     headers: {
         'Content-Type': 'application/json',

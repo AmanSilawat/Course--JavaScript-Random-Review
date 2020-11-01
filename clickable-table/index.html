@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js</title>
+    <style>
+        #rankings-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 500px;
+}
+
+#rankings-table td, #rankings-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#rankings-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#rankings-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1fa3b4;
+  color: white;
+}
+    </style>
+</head>
+<body>
+    <h2>Make your table is clickable</h2>
+    <table id="rankings-table" class="table">
+        <thead>
+            <tr data-href="http://www.google.com">
+                <th>Ranking</th>
+                <th>Full Name</th>
+                <th>Full Points</th>
+            </tr>
+            <tr data-href="http://www.wikipedia.org">
+                <td>24</td>
+                <td>Raju</td>
+                <td>500</td>
+            </tr>
+            <tr data-href="http://frontendmasters.com/">
+                <td>20</td>
+                <td>Mukesh</td>
+                <td>520</td>
+            </tr>
+            <tr data-href="http://www.youtube.com">
+                <td>15</td>
+                <td>Bilal</td>
+                <td>420</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Filled By JavaScript -->
+        </tbody>
+    </table>
+    <br>
+    <button onclick="addPerson()">Add new row</button>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
