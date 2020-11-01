@@ -1,5 +1,3 @@
-const { urlencoded } = require("express");
-
 const form = document.getElementById('myForm');
 
 form.addEventListener('submit', function(e) {
@@ -25,7 +23,7 @@ form.addEventListener('submit', function(e) {
         // body: usp,
         headers: {
             'Content-Type': 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            // 'Content-Type': 'application/x-www-form-urlencoded'
         }
     }).then(function(res) {
         return res.json();
