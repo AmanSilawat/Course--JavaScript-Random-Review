@@ -3,11 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript Magic</title>
+    <style>
+        body{margin: 0px; padding: 0px;background-color: rgb(255, 250, 238);}
+        #mainHead {
+            margin: 0px;
+            padding: 20px 25px;
+            color: wheat;
+            background-color: rgb(143, 27, 27);
+            position: relative;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            z-index: 99;
+        }
+        #mainHead::after {
+            content: 'JavaScript';
+            margin-top: 15px;
+            font-size: 15px;
+            float: right;
+        }
+
+        #mainHead::before {
+            content: '';
+            position: absolute;
+            width: calc(100% - 50px);
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.733);
+            margin-top: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            
+        } 
+
+        #subHead{
+            font-size: 15px;
+            font-family: arial;
+            margin: 0px;
+            padding: 5px 25px;
+            color: rgb(238, 238, 238);
+            background-color: rgb(110, 155, 168);
+        }
+        #para {
+            padding: 10px 25px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            line-height: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(51, 51, 51);
+        }
+    </style>
 </head>
 <body>
-    <h1 id="mainHead">Main Heading</h1>
-    <h1 id="subHead">Sub Heading</h1>
-    <script src="custom-error.js"></script>
+    <h1 id="mainHead">Home Page</h1>
+    <h3 id="subHead">Document Object Model (DOM)</h3>
+    <p id="para">This is a main index page. Maximum js files to handle from this page only.</p>
+    <script src="get-css-style.js"></script>
 </body>
 </html>
