@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export CSV</title>
+    <style>
+        #dataTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 500px;
+}
+
+#dataTable td, #dataTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#dataTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#dataTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1fa3b4;
+  color: white;
+}
+    </style>
+</head>
+<body>
+    <h1>Export an HTML table to a CSV file</h1>
+    <table id="dataTable" class="table">
+        <thead>
+            <tr>
+                <th>Ranking</th>
+                <th>Full Name</th>
+                <th>Points</th>
+                <th>Tean</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Pseson 1</td>
+                <td>1,825</td>
+                <td>Green</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pseson 2</td>
+                <td>2,987</td>
+                <td>Green</td>
+                <td>Green</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pseson 3, "The Champion" Foster</td>
+                <td>1,800</td>
+                <td>blue</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button id="btnExporterToCsv" type="button" class="button">Export to csv</button>
+    <script src="TableCSVExporter.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
