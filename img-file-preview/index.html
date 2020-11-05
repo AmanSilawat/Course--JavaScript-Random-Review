@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload preview</title>
+    <style>
+        .img-preview{
+            width: 300px;
+            min-height: 100px;
+            border: 2px solid gray;
+            margin-top: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: gray;
+        }
+
+        .image-preview__image{
+            display: none;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image File Preivew</h1>
+    <input type="file" name="inpFile" id="inpFile" />
+    <div class="img-preview" id="imgPreview">
+        <img src="" alt="Image Preivew" class="image-preview__image" />
+        <span class="image-preview__default-text">Image Preview</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
