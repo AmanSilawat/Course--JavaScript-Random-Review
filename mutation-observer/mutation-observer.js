@@ -10,13 +10,13 @@ const myList = document.querySelector('.summary');
 
 // MutationObserver appcept a callback funtion
 const observer = new MutationObserver(mutations => {
-    // console.log(mutations);
+    console.log(mutations);
 
     // loop throuth each mutation
     mutations.forEach((recored) => {
         console.log(recored);
 
-        if (recored.type === 'attributes') {
+        if (recored.type == 'attributes') {
             const changedAttrName = recored.attributeName;
             const newValue = recored.target.getAttribute(changedAttrName);
 
@@ -28,7 +28,7 @@ const observer = new MutationObserver(mutations => {
 // Configures the MutationObserver to begin receiving notifications through its callback function when DOM changes matching the given options occur.
 observer.observe(myList, {
     attributes: true,
-    attributeFilter: ['class'],
+    // attributeFilter: ['class'],
     attributeOldValue: true
 });
 

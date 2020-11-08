@@ -12,7 +12,7 @@ const observer = new MutationObserver(mutations => {
     mutations.forEach(recored => {
         console.log(recored);
 
-        console.log('new text is : ' + recored.target.nodeValue + ',  old value is: ' + recored.target.characterDataOldValue);
+        console.log(`new text is : ${recored.target.nodeValue},  old value is: ${recored.target.characterDataOldValue}`);
     })
 });
 
