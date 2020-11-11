@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Magic</title>
+    <link rel="shortcut icon" href="/img/monitor.png">
+    <style>
+        body{margin: 0px; padding: 0px;background-color: #fff;font-family: Arial, Helvetica, sans-serif;}
+        #mainHead {
+            margin: 0px;
+            padding: 20px 25px;
+            color: wheat;
+            background-color: rgb(143, 27, 27);
+            position: relative;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            z-index: 99;
+            box-shadow: 0px 2px 5px 2px rgb(255 255 255 / 50%);
+        }
+        #mainHead::after {
+            content: 'JavaScript';
+            margin-top: 15px;
+            font-size: 15px;
+            float: right;
+        }
+
+        #mainHead::before {
+            content: '';
+            position: absolute;
+            width: calc(100% - 50px);
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.733);
+            margin-top: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            
+        } 
+
+        #subHead{
+            font-size: 15px;
+            font-family: arial;
+            margin: 0px;
+            padding: 5px 25px;
+            color: rgb(238, 238, 238);
+            background-color: rgb(110, 155, 168);
+            box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 50%);
+        }
+        #para {
+            padding: 10px 25px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            line-height: 30px;
+            color: rgb(51, 51, 51);
+        }
+        li{margin-bottom: 20px;line-height: 22px;letter-spacing: 1px;}
+        #myBox, #myBox2 {
+            width: 200px;
+            height: 200px;
+            background: purple;
+            color: #fff;
+            padding: 20px;
+        }
+        #main {
+            height: 150px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="mainHead">Home Page</h1>
+    <h3 id="subHead">Document Object Model (DOM)</h3>
+    <p id="para">This is a main index page. Maximum js files to handle from this page only.</p>
+    <div id="experiment" class="experiment">
+        <!-- Only this is created by testing purpose -->
+        <span>Testing Element</span>
+    </div>
+    <h4>Advantages of JavaScript</h4>
+    <ul id="myList">
+        <li><strong>Speed; </strong>Being client-side, JavaScript is very fast because any code functions can be run immediately instead of having to contact the server and wait for an answer.</li>
+        <li><strong>Simplicity: </strong>JavaScript is relatively simple to learn and implement.</li>
+        <li><strong>Versatility: </strong>JavaScript plays nicely with other languages and can be used in a huge variety of applications. Unlike PHP or SSI scripts, JavaScript can be inserted into any web page regardless of the file extension. JavaScript can also be used inside scripts written in other languages such as Perl and PHP.</li>
+        <li><strong>Server Load: </strong>Being client-side reduces the demand on the website server.</li>
+        <li><strong>Less server interaction: </strong>You can validate user input before sending the page off to the server. This saves server traffic, which means less load on your server.</li>
+        <li><strong>Immediate feedback to the visitors: </strong>They don't have to wait for a page reload to see if they have forgotten to enter something.</li>
+        <li><strong>Increased interactivity: </strong>You can create interfaces that react when the user hovers over them with a mouse or activates them via the keyboard.</li>
+        <li><strong>Richer interfaces: </strong>You can use JavaScript to include such items as drag-and-drop components and sliders to give a Rich Interface to your site visitors.</li>
+    </ul>
+
+    <div id="myBox">
+        Testing fullscreen API (fullscreen.js)
+    </div>
+    <h3>some scrolable content</h3>
+    <div id="main">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque rerum animi ratione? Impedit quam ab a facilis reprehenderit, doloribus praesentium, odio voluptatem non, ex enim at harum! Commodi, quo quae?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque rerum animi ratione? Impedit quam ab a facilis reprehenderit, doloribus praesentium, odio voluptatem non, ex enim at harum! Commodi, quo quae?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque rerum animi ratione? Impedit quam ab a facilis reprehenderit, doloribus praesentium, odio voluptatem non, ex enim at harum! Commodi, quo quae?</p>
+        <div id="myBox2">
+            Testing fullscreen API (insersection-observer.js)
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque rerum animi ratione? Impedit quam ab a facilis reprehenderit, doloribus praesentium, odio voluptatem non, ex enim at harum! Commodi, quo quae?</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque rerum animi ratione? Impedit quam ab a facilis reprehenderit, doloribus praesentium, odio voluptatem non, ex enim at harum! Commodi, quo quae?</p>
+    
+    <script src="insersection-observer/main2.js"></script>
+</body>
+</html>
