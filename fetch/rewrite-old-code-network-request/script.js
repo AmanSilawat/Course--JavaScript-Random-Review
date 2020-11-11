@@ -26,3 +26,9 @@ fetchMsg(15).then(html => {
     // document.querySelector('#msg_conainer').innerHTML = html
     console.log(html); // This is your chat room id: 15
 });
+
+// !encodeURIComponent sort Description
+/*
+Not Escaped:       : A-Z a-z 0-9 - _ . ! ~ * ' ( )
+Reserved Characters: ";,/?:@&=+$";  //
+*/
