@@ -41,3 +41,21 @@ console.log(obj2); // {name: "Raju", age: 25}
 obj2.name = 'Imtiyaj';
 console.log(obj); // {name: "Raju", age: 25}
 console.log(obj2); // {name: "Imtiyaj", age: 25}
+
+
+//! Shallow copy example
+
+const user = {
+    name: 'user1',
+    age: 25,
+    scores : [10, 20, 30]
+}
+
+// similar functionality same Object.assign()
+const copy = { ...user, occupation: 'Web', age: 30 }
+copy; // {name: "user1", age: 30, score: [10, 20, 30], occupation: "Web"}
+copy.scores.push(200);
+
+// this is shallow copy not deep copy
+copy; // {name: "user1", age: 30, score: [10, 20, 30, 200], occupation: "Web"}
+user; // {name: "user1", age: 30, score: [10, 20, 30, 200], occupation: "Web"}
