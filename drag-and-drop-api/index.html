@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Element</title>
+    <style>
+        .drop-zone {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 8px dashed #000;
+        }
+
+        .drop-zone--over {
+            opacity: 0.5;
+        }
+
+        #myDraggableElement {
+            width: 50px;
+            height: 50px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drag & Drop Element API</h1>
+    
+    <div class="drop-zone" style="border-color: red;">
+        <div id="myDraggableElement" draggable="true"></div>
+    </div>
+    <div class="drop-zone" style="border-color: blue;"></div>
+
+    <input type="file" id="myFileInput">
+    <script>
+        const myDraggableElement = document.getElementById('myDraggableElement');
+        myDraggableElement.addEventListener('dragstart', e => {
+            e.dataTransfer.setData('text/plain', myDraggableElement.id);
+        });
+
+        for (const dropZone of document.querySelectorAll('.drop-zone')) {
+
+            // When draggable element is over a drop zone
+            // every 100 milisecond auto trigger when drag over on Element
+            dropZone.addEventListener('dragover', e => {
+                // Default action: Reset the current drag operation to "none".
+                e.preventDefault();
+                dropZone.classList.add('drop-zone--over');
+            });
+
+            // // When draggable element is dropped onto drop zone  
+            dropZone.addEventListener('dragleave', e => {
+                dropZone.classList.remove('drop-zone--over');
+            })
+
+            dropZone.addEventListener('drop', e => {
+                e.preventDefault();
+
+                 // drag any file in dropZone & get file details
+                document.getElementById('myFileInput').files = e.dataTransfer.files;
+
+                const droppedElmentId = e.dataTransfer.getData('text/plain');
+                const droppedElement = document.getElementById(droppedElmentId);
+
+                dropZone.appendChild(droppedElement);
+                dropZone.classList.remove('drop-zone--over');
+            });
+        }
+    </script>
+</body>
+</html>
