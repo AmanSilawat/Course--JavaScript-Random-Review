@@ -31,3 +31,25 @@ document.addEventListener('dblclick', (e) => {
 document.addEventListener('fullscreenchange', () => {
     console.log('full screen change');
 })
+
+
+// ! fullscreen API not work page loaded (only work user gesture)
+// let btn = document.createElement('button');
+// btn.textContent = 'click';
+// document.body.appendChild(btn);
+
+// // WARNING: Failed to execute 'requestFullscreen' on 'Element': API can only be initiated by a user gesture.
+// btn.addEventListener('click', (e) => {
+//     console.log('click event');
+//     toggleFullscreen();
+// });
+
+// // change full screen state
+// document.addEventListener('fullscreenchange', () => {
+//     console.log('full screen change');
+// });
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     console.log('DOMContentLoaded event');
+//     btn.click();
+// });
