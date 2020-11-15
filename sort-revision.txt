@@ -1,0 +1,136 @@
+Observer Design Pattern
+Mutation Observer Pattern
+
+Set Object
+Array fill
+Mouse pos: x,y to window edge
+
+
+
+onhashchange event
+
+navigator.onLine
+window.addEventListener('online', () => {})
+
+padStart(targetLength, padString)
+padEnd(targetLength, padString)
+
+Function.prototype.call(thisArg, arg1, arg2, arg3);
+Function.prototype.apply(thisArg, [argsArray]);             : Math.max.apply(null, numbers);
+
+String.prototype.repeat()
+
+console.time
+console.log
+console.table
+console output stying           : '%cSomeText%cAnotherText', 'color:red', 'color:green'
+Enum type (!)                   : Enums are not supported in JavaScript natively, Enums by nature can't be changed.
+Custom Even                     : new CustomEvent()  ? https://www.javascripttutorial.net/javascript-dom/javascript-custom-events/#:~:text=Why%20using%20custom%20events,to%20the%20same%20custom%20event.
+new FormData();                 : append(), delete(), entries(), get(), getAll(), has(), keys(), set(), values()
+
+xml request                     : (onload, onreadystatechange, status)
+xhr.send(new FormData(data))    : ?
+xml                             : post request
+xml                             : get request
+xml                             : submit
+xml                             : new URLSearchParams({})
+xml                             : FormData
+xml                             :          file upload
+xml                             : multiple file upload
+xml                             :          image load 
+xml                             : multiple image load (no bad user experiance)
+xml                             : wrap promise
+xml                             : chaingin ???????
+xml                             : send encoding data / image
+
+element.parentNode              : get parentNode
+Node.insertBefore()             : ParentElement(newElement, childElement)
+Node.insertAdjacentElement('beforebegin', newEle);
+Node.insertAdjacentElement('afterbegin', newEle);
+Node.insertAdjacentElement('beforeend', newEle);
+Node.insertAdjacentElement('afterend', newEle);
+Node.append                     : Node.append(Node / 'textNode');
+Node.appendChild(Node);         : only node
+Node.nextSibling                : text(included enter, space, text), node
+Node.nextElementSibling         : node
+Node.previousSibling            : text(included enter, space, text), node
+Node.previousElementSibling     : node
+Node.cloneNode([deep])          : true-Infinity Dept / number
+Node.getBoundingClientRect()    : constainSomeProperty( x, y, width, height, top, right, bottom, left)
+Node.outerHTML
+Node.innerHTML
+Node.contains()                 : document.body.contains(node);
+Node.childNodes                 : LIVE Node list, 
+
+
+DOMTokenList.contains()         :Node.classList.constains('ClassName');
+
+
+localStorage()                  : 
+document.execCommand("Copy")    : DEPRACATED - selected text copy into clipboard
+Function.prototype.bind()
+
+
+Event                      : onfocus
+Event                      : blur
+Event                      : transitionend
+Event                      : beforeunload
+Event                      : unload
+Event                      : DOMContentLoaded
+
+Event Handlar Pro.         : e.stopPropagation()         ::box.click, btn.click{ stopProp() }
+Event Handlar Pro.         : e.getModifierState()        ::bool = e.getModifierState('CapsLock');
+
+bubbling                   : targetElement -> parentElement -> body -> html
+capturing                  : html -> body -> parentElement -> targetElement
+
+Window.parent              : window.parent.document.getElementById(elementId)
+Math.random()              : Math.ceil( Math.random() * 9 )
+String.fromCharCode        : utf-16 to string
+
+Object.assign()            : Object.assign(target, ...sources)
+                           : Warning for Deep Clone
+                           : Merging objects with same properties
+                           : Primitives will be wrapped to objects
+
+onscroll                   : handles onscroll handles scrolling of an object's content.
+                           : Node.onscroll = () => e.target.scrollTop
+onwheel                    : handles general wheel rotation
+
+parser.parseFromString(`html -> body -> node -> ...`)
+
+break nested loop          : labels: { { break } }
+add multiple css           : Node.style.cssText
+custom error               : throw new Error('opps something went wrong');
+clickable table            : add click event on each row and {window.location.href = rowElement.dataset.href}
+change iframe content      : iframe.contentWindow/iframe.contentDocument
+how to vibrate mobile      : navigator.vibrate(ms/[ms])
+Own Promise                : fun () { r new Promise((reso, reje)=> {})  }
+aggregate multiple promises: Promise.all([fetchRes1, fetchRes2]).then( (v) => Promise.all( v.map( res => res.json ) ) ).then(([resTxt1, resTxt2]) => .. , ..) .. 
+Node bg red contain or not : window.getComputedStyle(h1/::after)
+change JSON output         : obj = {.., .., toJSON() {`this.a, this,b`}}
+base64 encoding ex!        : btoa('string')
+base64 decoding ex!        : atob(encodedBase64)
+sendData Between tabs      : new BroadcastChannel('xyz'); 
+                           : Handle incoming messages => Event: 'message' {log e} // 
+                           : Send message             => bc.postMessage( str / arr / obj / new Blob(['string txt'], {type: 'text/plain}) )
+                           : Disconnect the channel   => bc.close();
+use session storage        : sessionStroage.setItem/getIteam/removeIteam/clear
+
+how to use fromEntires     : Object.fromEntries(entiresMap);
+how to use entires         : Object.fromEntries( obj );
+
+where use url construc..   : new URL('url')
+                           : new URL('addPath', 'url')
+                           : Properties ( hash, host, hostname, href, origin 'Read only', password, pathname, protocol, search, username )
+
+object seal                : Object.seal(obj)
+                           : preventing new properties
+                           : marking all existing properties as non-configurable (Values of present properties can still be changed as long as they are writable.)
+double arrVal Arrayform    : Array.from([1, 2, 3], x => x + x);      
+genrate number 0 to 4      : Array.from({length: 5}, (v, i) => i); // [0, 1, 2, 3, 4]
+notification permission    : Notification.requestPermission().then(per => fun())
+set a notification         : fun : new Notification('msg', { body: 'body msg', icon: 'url'});
+clicking a notification    : notification.onclick() => window.location.href = url;
+fullscreen api             : working only user gesture
+                           : onclick: if(document.fullscreenElement) { document.exitFullscreen() } else { element.requestFullscreen().catch(console.log) }
