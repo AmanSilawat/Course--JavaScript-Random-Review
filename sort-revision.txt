@@ -1,5 +1,6 @@
 Observer Design Pattern
 Mutation Observer Pattern
+Intersection observer
 
 Set Object
 Array fill
@@ -61,6 +62,15 @@ Node.outerHTML
 Node.innerHTML
 Node.contains()                 : document.body.contains(node);
 Node.childNodes                 : LIVE Node list, 
+Node.isEqualNode(otherNode)     : check equal tagName, tagAttributes, nodeValue, all nested node element and textNode( read: spaces, enters )
+
+ParentNode.prepend()            : ParentNode.prepend(strong, em, 'text node');  :: accept multiple node
+
+Element.toggleAttribute()       : Element.toggleAttribute(name [, force]);      :: force-accept boolean
+Element.setAttribute()          : Element.setAttribute(name, value);
+Element.getAttribute()          : Element.getAttribute(attributeName);
+Element.hasAttribute()          : Element.hasAttribute(name);
+Element.removeAttribute()       : Element.removeAttribute(attrName);
 
 
 DOMTokenList.contains()         :Node.classList.constains('ClassName');
@@ -77,7 +87,13 @@ Event                      : transitionend
 Event                      : beforeunload
 Event                      : unload
 Event                      : DOMContentLoaded
+Event                      : visibilitychange            ::document.visibilityState     resutl: hidden / visible
+                                                         ::document.hidden              result: true / false
 
+Event                      : dragstart
+Event                      : dragover                    ::Default action: Reset the current drag operation to "none".
+Event                      : dragleave
+Event                      : drop
 Event Handlar Pro.         : e.stopPropagation()         ::box.click, btn.click{ stopProp() }
 Event Handlar Pro.         : e.getModifierState()        ::bool = e.getModifierState('CapsLock');
 
@@ -134,3 +150,26 @@ set a notification         : fun : new Notification('msg', { body: 'body msg', i
 clicking a notification    : notification.onclick() => window.location.href = url;
 fullscreen api             : working only user gesture
                            : onclick: if(document.fullscreenElement) { document.exitFullscreen() } else { element.requestFullscreen().catch(console.log) }
+
+Dynamic Import             : await import(moudlePath).then(modul=>modul.method(xyz)).catch(err=>console.log)
+Smooth scroll/Jump scroll  : window.scrollTo( {top: pos, left: pos, behavior: 'smooth' });
+get element from x/y coord : document.elementFromPoint(70, 127);
+String.prototype.replace() : str.replace(regexp|substr, newSubstr|function)
+Array element copy with in : arr.copyWithin(target, start point, End point);
+Nullish coalescing       ??: leftExpr ?? rightExpr             :: returning the second operand when the first one evaluates (0, '', NaN, null, undefined) (but no other falsy values)
+boolean logical operator ||: leftExpr ?? rightExpr             :: returning the second operand when the first one evaluates to either null or undefined (but no other falsy values)
+singleton page navigation  : history.length                    :: get current length of page history
+                           : history.back()                    :: go backward          
+                           : history.forward()                 :: go forward           
+                           : history.go(1)                     :: Positive value mean: go forward   
+                           : history.go(-2)                    :: Positive value mean: go backward
+                           : history.go(0)                     :: ZERO mean : refresh current page
+                           : history.pushState(anyData, title, string)
+                           : history.replaceState(anyData, title, string)
+
+HTMLInputElement.setSelectionRange() : element.setSelectionRange(selectionStart, selectionEnd [, selectionDirection]);
+                                     : selectionStart          :: The 0-based index
+                                     : selectionEnd            :: The 0-based index
+                                     : selectionDirection(opt.):: forward
+                                                               :: backward
+                                                               :: none
