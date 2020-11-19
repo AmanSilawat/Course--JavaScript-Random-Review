@@ -143,6 +143,14 @@ where use url construc..        : new URL('url')
 object seal                     : Object.seal(obj)
                                 : preventing new properties
                                 : marking all existing properties as non-configurable (Values of present properties can still be changed as long as they are writable.)
+
+object freeze                   : Object.freeze(obj)
+                                : It prevents modifying any existing properties
+                                : Neither one affects 'deep'/grandchildren objects. E.g.,
+                                : if obj is frozen, obj.el can’t be reassigned,
+                                : but the value of obj.el could be modified,
+                                : e.g. obj.el.id can be changed.
+
 double arrVal Arrayform         : Array.from([1, 2, 3], x => x + x);      
 genrate number 0 to 4           : Array.from({length: 5}, (v, i) => i); // [0, 1, 2, 3, 4]
 notification permission         : Notification.requestPermission().then(per => fun())
@@ -177,7 +185,7 @@ FileReader Object               : asynchronously read the contents of files (or 
                                 : Returns a newly constructed FileReader.
                                 : store data user pc using file and blob object
 
-                                : Related Objects
+                                : ᗐ Related Objects ᗐ
                                 : FileList Object                   :: returned as a result of a user selecting files using the <input> element
                                                                     :: Property - name, size, type
                                 : DataTransfer Object               :: from a drag and drop operation's
@@ -221,3 +229,56 @@ DifferenceBetween 'exec','match': 1. string.match finds the first match and retu
                                 :    when the BLOBAL FLAG is not used.
                                 : 2. string.match just returns all the matches,
                                 :    when the BLOBAL FLAG is used.
+
+
+
+Object.defineProperty           : Object.defineProperty(obj, prop, descriptor)
+
+                                : configurable attribute            :: Defaults to false.
+                                                                    :: true if the type of this property descriptor may be changed and if the property may be deleted from the corresponding object.
+                                                                    :: Defaults to false.   :- defineProperty
+                                                                    :: Defaults to true.    :- object Default
+                                                                    
+                                                                    :: defineProperty get() configurable: false  
+                                                                    :: defineProperty       configurable: true   // throws a TypeError
+                                                                    :: defineProperty       enumerable:   true   // throws a TypeError
+                                                                    :: defineProperty get()                      // throws a TypeError
+                                                                    :: defineProperty set()                      // throws a TypeError
+                                                                    :: defineProperty value: 12                  // throws a TypeError
+                                                                    :: delete o.a;                               // Nothing happens
+
+                                : enumerable attribute              :: Defaults to false.   :- defineProperty
+                                                                    :: Defaults to true.    :- object Default
+                                                                    :: true if and only if this property shows up during enumeration of the properties on the corresponding object.                                                                    
+                                                                    :: obj.propertyIsEnumerable('PropertyName')
+
+                                                                    :: 'a' defineProperty enumerable: true                     // true
+                                                                    :: 'b' defineProperty enumerable: false                    // false
+                                                                    :: 'c' defineProperty 'defaultIs'                          // false
+                                                                    :: 'd' object.d = 4                                        // true
+                                                                    :: 'e' defineProperty Symbol.for('e') enumerable: true     // false
+                                                                    :: 'f' defineProperty Symbol.for('f') enumerable: false    // false
+
+                                                                    :: Result of Shallow Copy
+                                                                    :: 'a' // 1
+                                                                    :: 'b' // undefined
+                                                                    :: 'c' // undefined
+                                                                    :: 'd' // 4
+                                                                    :: 'e' // 5
+                                                                    :: 'f' // undefined
+
+                                                                    :: Result of deep Copy
+                                                                    :: 'a' // 1
+                                                                    :: 'b' // undefined
+                                                                    :: 'c' // undefined
+                                                                    :: 'd' // 4
+                                                                    :: 'e' // undefined
+                                                                    :: 'f' // undefined
+
+                                : writable attribute                :: true if the value associated with the property may be changed with an assignment operator.
+                                                                    :: Defaults to false.   :- defineProperty
+                                                                    :: Defaults to true.    :- object Default
+
+                                                                    :: defineProperty value: 37, writable: false  // after set writable false result in below
+                                                                    :: o.a = 25; Without 'strict mode'            // No error thrown
+                                                                    :: o.a = 25; In 'strict mode'                 // throws a TypeError
