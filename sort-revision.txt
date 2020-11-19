@@ -73,7 +73,7 @@ Element.hasAttribute()          : Element.hasAttribute(name);
 Element.removeAttribute()       : Element.removeAttribute(attrName);
 
 
-DOMTokenList.contains()         :Node.classList.constains('ClassName');
+DOMTokenList.contains()         : Node.classList.constains('ClassName');
 
 
 localStorage()                  : 
@@ -81,132 +81,143 @@ document.execCommand("Copy")    : DEPRACATED - selected text copy into clipboard
 Function.prototype.bind()
 
 
-Event                      : onfocus
-Event                      : blur
-Event                      : transitionend
-Event                      : beforeunload
-Event                      : unload
-Event                      : DOMContentLoaded
-Event                      : visibilitychange            ::document.visibilityState     resutl: hidden / visible
-                                                         ::document.hidden              result: true / false
+Event                           : onfocus
+Event                           : blur
+Event                           : transitionend
+Event                           : beforeunload
+Event                           : unload
+Event                           : DOMContentLoaded
+Event                           : visibilitychange                  :: document.visibilityState     resutl: hidden / visible
+                                                                    :: document.hidden              result: true / false
 
-Event                      : dragstart
-Event                      : dragover                    ::Default action: Reset the current drag operation to "none".
-Event                      : dragleave
-Event                      : drop
-Event Handlar Pro.         : e.stopPropagation()         ::box.click, btn.click{ stopProp() }
-Event Handlar Pro.         : e.getModifierState()        ::bool = e.getModifierState('CapsLock');
+Event                           : dragstart
+Event                           : dragover                          :: Default action: Reset the current drag operation to "none".
+Event                           : dragleave
+Event                           : drop
+Event Handlar Pro.              : e.stopPropagation()               :: box.click, btn.click{ stopProp() }
+Event Handlar Pro.              : e.getModifierState()              :: bool = e.getModifierState('CapsLock');
 
-bubbling                   : targetElement -> parentElement -> body -> html
-capturing                  : html -> body -> parentElement -> targetElement
+bubbling                        : targetElement -> parentElement -> body -> html
+capturing                       : html -> body -> parentElement -> targetElement
 
-Window.parent              : window.parent.document.getElementById(elementId)
-Math.random()              : Math.ceil( Math.random() * 9 )
-String.fromCharCode        : utf-16 to string
+Window.parent                   : window.parent.document.getElementById(elementId)
+Math.random()                   : Math.ceil( Math.random() * 9 )
+String.fromCharCode             : utf-16 to string
 
-Object.assign()            : Object.assign(target, ...sources)
-                           : Warning for Deep Clone
-                           : Merging objects with same properties
-                           : Primitives will be wrapped to objects
+Object.assign()                 : Object.assign(target, ...sources)
+                                : Warning for Deep Clone
+                                : Merging objects with same properties
+                                : Primitives will be wrapped to objects
 
-onscroll                   : handles onscroll handles scrolling of an object's content.
-                           : Node.onscroll = () => e.target.scrollTop
-onwheel                    : handles general wheel rotation
+onscroll                        : handles onscroll handles scrolling of an object's content.
+                                : Node.onscroll = () => e.target.scrollTop
+onwheel                         : handles general wheel rotation
 
 parser.parseFromString(`html -> body -> node -> ...`)
 
-break nested loop          : labels: { { break } }
-add multiple css           : Node.style.cssText
-custom error               : throw new Error('opps something went wrong');
-clickable table            : add click event on each row and {window.location.href = rowElement.dataset.href}
-change iframe content      : iframe.contentWindow/iframe.contentDocument
-how to vibrate mobile      : navigator.vibrate(ms/[ms])
-Own Promise                : fun () { r new Promise((reso, reje)=> {})  }
-aggregate multiple promises: Promise.all([fetchRes1, fetchRes2]).then( (v) => Promise.all( v.map( res => res.json ) ) ).then(([resTxt1, resTxt2]) => .. , ..) .. 
-Node bg red contain or not : window.getComputedStyle(h1/::after)
-change JSON output         : obj = {.., .., toJSON() {`this.a, this,b`}}
-base64 encoding ex!        : btoa('string')
-base64 decoding ex!        : atob(encodedBase64)
-sendData Between tabs      : new BroadcastChannel('xyz'); 
-                           : Handle incoming messages => Event: 'message' {log e} // 
-                           : Send message             => bc.postMessage( str / arr / obj / new Blob(['string txt'], {type: 'text/plain}) )
-                           : Disconnect the channel   => bc.close();
-use session storage        : sessionStroage.setItem/getIteam/removeIteam/clear
+break nested loop               : labels: { { break } }
+add multiple css                : Node.style.cssText
+custom error                    : throw new Error('opps something went wrong');
+clickable table                 : add click event on each row and {window.location.href = rowElement.dataset.href}
+change iframe content           : iframe.contentWindow/iframe.contentDocument
+how to vibrate mobile           : navigator.vibrate(ms/[ms])
+Own Promise                     : fun () { r new Promise((reso, reje)=> {})  }
+aggregate multiple promises     : Promise.all([fetchRes1, fetchRes2]).then( (v) => Promise.all( v.map( res => res.json ) ) ).then(([resTxt1, resTxt2]) => .. , ..) .. 
+Node bg red contain or not      : window.getComputedStyle(h1/::after)
+change JSON output              : obj = {.., .., toJSON() {`this.a, this,b`}}
+base64 encoding ex!             : btoa('string')
+base64 decoding ex!             : atob(encodedBase64)
+sendData Between tabs           : new BroadcastChannel('xyz'); 
+                                : Handle incoming messages => Event: 'message' {log e} // 
+                                : Send message             => bc.postMessage( str / arr / obj / new Blob(['string txt'], {type: 'text/plain}) )
+                                : Disconnect the channel   => bc.close();
+use session storage             : sessionStroage.setItem/getIteam/removeIteam/clear
 
-how to use fromEntires     : Object.fromEntries(entiresMap);
-how to use entires         : Object.fromEntries( obj );
+how to use fromEntires          : Object.fromEntries(entiresMap);
+how to use entires              : Object.fromEntries( obj );
 
-where use url construc..   : new URL('url')
-                           : new URL('addPath', 'url')
-                           : Properties ( hash, host, hostname, href, origin 'Read only', password, pathname, protocol, search, username )
+where use url construc..        : new URL('url')
+                                : new URL('addPath', 'url')
+                                : Properties ( hash, host, hostname, href, origin 'Read only', password, pathname, protocol, search, username )
 
-object seal                : Object.seal(obj)
-                           : preventing new properties
-                           : marking all existing properties as non-configurable (Values of present properties can still be changed as long as they are writable.)
-double arrVal Arrayform    : Array.from([1, 2, 3], x => x + x);      
-genrate number 0 to 4      : Array.from({length: 5}, (v, i) => i); // [0, 1, 2, 3, 4]
-notification permission    : Notification.requestPermission().then(per => fun())
-set a notification         : fun : new Notification('msg', { body: 'body msg', icon: 'url'});
-clicking a notification    : notification.onclick() => window.location.href = url;
-fullscreen api             : working only user gesture
-                           : onclick: if(document.fullscreenElement) { document.exitFullscreen() } else { element.requestFullscreen().catch(console.log) }
+object seal                     : Object.seal(obj)
+                                : preventing new properties
+                                : marking all existing properties as non-configurable (Values of present properties can still be changed as long as they are writable.)
+double arrVal Arrayform         : Array.from([1, 2, 3], x => x + x);      
+genrate number 0 to 4           : Array.from({length: 5}, (v, i) => i); // [0, 1, 2, 3, 4]
+notification permission         : Notification.requestPermission().then(per => fun())
+set a notification              : fun : new Notification('msg', { body: 'body msg', icon: 'url'});
+clicking a notification         : notification.onclick() => window.location.href = url;
+fullscreen api                  : working only user gesture
+                                : onclick: if(document.fullscreenElement) { document.exitFullscreen() } else { element.requestFullscreen().catch(console.log) }
 
-Dynamic Import             : await import(moudlePath).then(modul=>modul.method(xyz)).catch(err=>console.log)
-Smooth scroll/Jump scroll  : window.scrollTo( {top: pos, left: pos, behavior: 'smooth' });
-get element from x/y coord : document.elementFromPoint(70, 127);
-String.prototype.replace() : str.replace(regexp|substr, newSubstr|function)
-Array element copy with in : arr.copyWithin(target, start point, End point);
-Nullish coalescing       ??: leftExpr ?? rightExpr             :: returning the second operand when the first one evaluates (0, '', NaN, null, undefined) (but no other falsy values)
-boolean logical operator ||: leftExpr ?? rightExpr             :: returning the second operand when the first one evaluates to either null or undefined (but no other falsy values)
-singleton page navigation  : history.length                    :: get current length of page history
-                           : history.back()                    :: go backward          
-                           : history.forward()                 :: go forward           
-                           : history.go(1)                     :: Positive value mean: go forward   
-                           : history.go(-2)                    :: Positive value mean: go backward
-                           : history.go(0)                     :: ZERO mean : refresh current page
-                           : history.pushState(anyData, title, string)
-                           : history.replaceState(anyData, title, string)
+Dynamic Import                  : await import(moudlePath).then(modul=>modul.method(xyz)).catch(err=>console.log)
+Smooth scroll/Jump scroll       : window.scrollTo( {top: pos, left: pos, behavior: 'smooth' });
+get element from x/y coord      : document.elementFromPoint(70, 127);
+String.prototype.replace()      : str.replace(regexp|substr, newSubstr|function)
+Array element copy with in      : arr.copyWithin(target, start point, End point);
+Nullish coalescing       ??     : leftExpr ?? rightExpr             :: returning the second operand when the first one evaluates (0, '', NaN, null, undefined) (but no other falsy values)
+boolean logical operator ||     : leftExpr ?? rightExpr             :: returning the second operand when the first one evaluates to either null or undefined (but no other falsy values)
+singleton page navigation       : history.length                    :: get current length of page history
+                                : history.back()                    :: go backward          
+                                : history.forward()                 :: go forward           
+                                : history.go(1)                     :: Positive value mean: go forward   
+                                : history.go(-2)                    :: Positive value mean: go backward
+                                : history.go(0)                     :: ZERO mean : refresh current page
+                                : history.pushState(anyData, title, string)
+                                : history.replaceState(anyData, title, string)
 
 HTMLInputElement.setSelectionRange() : element.setSelectionRange(selectionStart, selectionEnd [, selectionDirection]);
-                                     : selectionStart          :: The 0-based index
-                                     : selectionEnd            :: The 0-based index
-                                     : selectionDirection(opt.):: forward
-                                                               :: backward
-                                                               :: none
-FileReader Object          : asynchronously read the contents of files (or raw data buffers)
-                           : Returns a newly constructed FileReader.
-                           : store data user pc using file and blob object
+                                     : selectionStart               :: The 0-based index
+                                     : selectionEnd                 :: The 0-based index
+                                     : selectionDirection(opt.)     :: forward
+                                                                    :: backward
+                                                                    :: none
+FileReader Object               : asynchronously read the contents of files (or raw data buffers)
+                                : Returns a newly constructed FileReader.
+                                : store data user pc using file and blob object
 
-                           : Related Objects
-                           : FileList Object                   :: returned as a result of a user selecting files using the <input> element
-                                                               :: Property - name, size, type
-                           : DataTransfer Object               :: from a drag and drop operation's
-                           : mozGetAsFile() API                :: on an HTMLCanvasElement.
+                                : Related Objects
+                                : FileList Object                   :: returned as a result of a user selecting files using the <input> element
+                                                                    :: Property - name, size, type
+                                : DataTransfer Object               :: from a drag and drop operation's
+                                : mozGetAsFile() API                :: on an HTMLCanvasElement.
 
-                           : ᗐ Properties ᗐ
-                           : FileReader.error
-                           : FileReader.readyState             :: EMPTY	  0  No data has been loaded yet.
-                                                               :: LOADING 1  Data is currently being loaded.
-                                                               :: DONE    2  The entire read request has been completed.
-                           : FileReader.result                 :: property only valid after the read operation is complete,
-                                                               :: format of the data depends on which of the methods was used to initiate the read operation.
-                           : ᗐ Event handlers ᗐ
-                           : FileReader.onabort                :: This event is triggered each time the reading operation is aborted.
-                           : FileReader.onerror                :: This event is triggered each time the reading operation encounter an error.
-                           : FileReader.onload                 :: This event is triggered each time the reading operation is successfully completed.
-                           : FileReader.onloadstart            :: This event is triggered each time the reading is starting.
-                           : FileReader.onloadend              :: This event is triggered each time the reading operation is completed (either in success or failure).
-                           : FileReader.onprogress             :: A handler for the progress event. This event is triggered while reading a Blob content.
+                                : ᗐ Properties ᗐ
+                                : FileReader.error
+                                : FileReader.readyState             :: EMPTY	  0  No data has been loaded yet.
+                                                                    :: LOADING 1  Data is currently being loaded.
+                                                                    :: DONE    2  The entire read request has been completed.
+                                : FileReader.result                 :: property only valid after the read operation is complete,
+                                                                    :: format of the data depends on which of the methods was used to initiate the read operation.
+                                : ᗐ Event handlers ᗐ
+                                : FileReader.onabort                :: This event is triggered each time the reading operation is aborted.
+                                : FileReader.onerror                :: This event is triggered each time the reading operation encounter an error.
+                                : FileReader.onload                 :: This event is triggered each time the reading operation is successfully completed.
+                                : FileReader.onloadstart            :: This event is triggered each time the reading is starting.
+                                : FileReader.onloadend              :: This event is triggered each time the reading operation is completed (either in success or failure).
+                                : FileReader.onprogress             :: A handler for the progress event. This event is triggered while reading a Blob content.
 
-                           : ᗐ Method ᗐ
-                           : FileReader.abort()                :: Aborts the read operation. Upon return, the readyState will be DONE.
-                           : FileReader.readAsArrayBuffer()    :: Starts reading the contents of the specified Blob, once finished, the result attribute contains an ArrayBuffer representing the file's data.
-                           : FileReader.readAsBinaryString()   :: Starts reading the contents of the specified Blob, once finished, the result attribute contains the raw binary data from the file as a string.
-                           : FileReader.readAsDataURL()        :: Starts reading the contents of the specified Blob, once finished, the result attribute contains a data: URL representing the file's data.
-                           : FileReader.readAsText()           :: Starts reading the contents of the specified Blob, once finished, the result attribute contains the contents of the file as a text string. An optional encoding name can be specified.
-Accessing selected file(s) : 
+                                : ᗐ Method ᗐ
+                                : FileReader.abort()                :: Aborts the read operation. Upon return, the readyState will be DONE.
+                                : FileReader.readAsArrayBuffer()    :: Starts reading the contents of the specified Blob, once finished, the result attribute contains an ArrayBuffer representing the file's data.
+                                : FileReader.readAsBinaryString()   :: Starts reading the contents of the specified Blob, once finished, the result attribute contains the raw binary data from the file as a string.
+                                : FileReader.readAsDataURL()        :: Starts reading the contents of the specified Blob, once finished, the result attribute contains a data: URL representing the file's data.
+                                : FileReader.readAsText()           :: Starts reading the contents of the specified Blob, once finished, the result attribute contains the contents of the file as a text string. An optional encoding name can be specified.
+Accessing selected file(s)      : 
 Accessing selected file(s) on a change event
 
-string start begin or not  : str.startsWith(searchString[, position])
-                           : return true and false
-                           : This method is case-sensitive.
+string start begin or not       : str.startsWith(searchString[, position])
+                                : return true and false
+                                : This method is case-sensitive.
+
+regexp.exec() / String.match(re): return array or null  (REGEXP, MATCH - BOTH are same work) : only dirfference is 'match' is not supported g flag
+                                : [0]                               :: The full string of characters matched
+                                : [1 and more]                      :: The parenthesized substring matches, (unlimited matches)
+                                : index                             :: The 0-based index of the match in the string. The original string that was matched against.
+
+DifferenceBetween 'exec','match': 1. string.match finds the first match and returns it with the actual match,
+                                :    the index at which the text was found and the actual input,
+                                :    when the BLOBAL FLAG is not used.
+                                : 2. string.match just returns all the matches,
+                                :    when the BLOBAL FLAG is used.
