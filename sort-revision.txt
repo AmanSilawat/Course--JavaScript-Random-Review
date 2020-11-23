@@ -282,3 +282,10 @@ Object.defineProperty           : Object.defineProperty(obj, prop, descriptor)
                                                                     :: defineProperty value: 37, writable: false  // after set writable false result in below
                                                                     :: o.a = 25; Without 'strict mode'            // No error thrown
                                                                     :: o.a = 25; In 'strict mode'                 // throws a TypeError
+
+Gloable_Object Proxy            : The Proxy object enables you to create a proxy for another object,
+                                : which can intercept and redefine fundamental operations for that object.
+
+                                : ᗐ two parameters ᗐ
+                                : target: the original object which you want to proxy
+                                : handler: an object that defines which operations will be intercepted and how to redefine intercepted operations.
