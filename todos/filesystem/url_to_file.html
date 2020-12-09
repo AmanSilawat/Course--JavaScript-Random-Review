@@ -1,0 +1,15 @@
+<div>be carefull overrite your file</div>
+<div>you choosen file save in test_one.txt</div>
+<button id="btn">save</button>
+<script>
+    btn.addEventListener('click', async function writeURLToFile() {
+        [fileHandle] = await window.showOpenFilePicker();
+        // Create a FileSystemWritableFileStream to write to.
+        const writable = await fileHandle.createWritable();
+        // Make an HTTP request for the contents.
+        const response = await fetch('./test_one.txt');
+        // Stream the response into the file.
+        await response.body.pipeTo(writable);
+        // pipeTo() closes the destination pipe by default, no need to close it.
+    });
+</script>
