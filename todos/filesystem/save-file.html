@@ -1,0 +1,17 @@
+<button onclick="getNewFileHandle()">save file</button>
+<script>
+    async function getNewFileHandle() {
+        const options = {
+            types: [
+                {
+                    description: 'Text Files',
+                    accept: {
+                        'text/plain': ['.txt'],
+                    },
+                },
+            ],
+        };
+        const handle = await window.showSaveFilePicker(options);
+        return handle;
+    }
+</script>
