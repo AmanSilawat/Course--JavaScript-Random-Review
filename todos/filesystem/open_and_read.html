@@ -1,0 +1,22 @@
+<!-- https://web.dev/file-system-access/ -->
+<button id="butOpenFile">click</button>
+<textarea id="textarea" name="txtarea" id="" cols="30" rows="10"></textarea>
+<script>
+    let textArea = document.getElementById('textarea');
+    let fileHandle;
+    butOpenFile.addEventListener('click', async () => {
+        // return data on FileSystemFileHandle api
+        [fileHandle] = await window.showOpenFilePicker();
+        console.log(fileHandle);
+
+        // return data on File api
+        const file = await fileHandle.getFile();
+        console.log(file);
+
+        // get text data
+        const contents = await file.text();
+        console.log(contents);
+        textArea.value = contents;
+    });
+
+</script>
