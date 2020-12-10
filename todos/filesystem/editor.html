@@ -1,0 +1,17 @@
+<textarea id="txtArea" name="txtArea" id="" cols="30" rows="10"></textarea><br>
+<button id="openFile">Open</button>
+<button id="saveFile">Save</button>
+<script>
+    let fileHandle;
+    openFile.addEventListener('click', async function() {
+        [fileHandle] = await window.showOpenFilePicker();
+        console.log(fileHandle);
+        let file = await fileHandle.getFile();
+        txtArea.value = await file.text();
+    });
+
+    saveFile.addEventListener('click', async function() {
+
+    });
+    
+</script>

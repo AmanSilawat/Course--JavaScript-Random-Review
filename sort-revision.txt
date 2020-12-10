@@ -74,6 +74,10 @@ Element.removeAttribute()       : Element.removeAttribute(attrName);
 
 
 DOMTokenList.contains()         : Node.classList.constains('ClassName');
+DOMParser                       : nodes generated from your string
+                                : syntax - new DOMParser().parseFromString(string, mimeType)
+
+input element                   : e.target.attributes.name.value                :: get value of input name 
 
 
 localStorage()                  : 
@@ -289,3 +293,20 @@ Gloable_Object Proxy            : The Proxy object enables you to create a proxy
                                 : ᗐ two parameters ᗐ
                                 : target: the original object which you want to proxy
                                 : handler: an object that defines which operations will be intercepted and how to redefine intercepted operations.
+
+                                : ᗐ syntax ᗐ
+                                : new Proxy(target, handler1);
+
+                                : ᗐ Default value with “get” trap ᗐ
+                                : get(target, property, receiver)
+                                : target – is the target object
+                                : property – property name,
+                                : receiver – if the target property is a getter
+
+                                : ᗐ Validation with “set” trap ᗐ
+                                : target – is the target object, the one passed as the first argument to new Proxy,
+                                : property – property name,
+                                : value – property value,
+                                : receiver – similar to get trap, matters only for setter properties.
+                                : RETURN TRUE : For set, it must return true for a successful write.
+                                              : f we forget to do it or return any falsy value, the operation triggers TypeError
