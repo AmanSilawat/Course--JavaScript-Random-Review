@@ -90,7 +90,12 @@ Event                           : blur
 Event                           : transitionend
 Event                           : beforeunload
 Event                           : unload
-Event                           : DOMContentLoaded
+Event                           : load                              :: DifferenceBetween load and DOMContentLoaded
+Event                           : DOMContentLoaded                  :: The DOMContentLoaded event fires when all the nodes in the
+                                                                       page have been constructed in the DOM tree.
+                                                                       The load event fires when all resources such as images and
+                                                                       sub-frames are loaded completely.
+
 Event                           : visibilitychange                  :: document.visibilityState     resutl: hidden / visible
                                                                     :: document.hidden              result: true / false
 
