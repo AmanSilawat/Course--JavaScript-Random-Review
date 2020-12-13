@@ -4,12 +4,15 @@
 <script>
     btn.addEventListener('click', async function writeURLToFile() {
         [fileHandle] = await window.showOpenFilePicker();
+        console.log(fileHandle);
         // Create a FileSystemWritableFileStream to write to.
         const writable = await fileHandle.createWritable();
+        console.log(writable);
         // Make an HTTP request for the contents.
         const response = await fetch('./test_one.txt');
+        console.log(response);
         // Stream the response into the file.
-        await response.body.pipeTo(writable);
+        console.log( await response.body.pipeTo(writable) );
         // pipeTo() closes the destination pipe by default, no need to close it.
     });
 </script>

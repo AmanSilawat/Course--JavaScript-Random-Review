@@ -1,17 +1,62 @@
-<textarea id="txtArea" name="txtArea" id="" cols="30" rows="10"></textarea><br>
+<textarea id="txtArea" name="txtArea" id="" cols="30" rows="10" draggable="true"></textarea><br>
 <button id="openFile">Open</button>
 <button id="saveFile">Save</button>
+<button id="saveAsFile">Save As</button>
 <script>
     let fileHandle;
-    openFile.addEventListener('click', async function() {
-        [fileHandle] = await window.showOpenFilePicker();
-        console.log(fileHandle);
+    openFile.addEventListener('click', async function () {
+        [fileHandle] = await window.showOpenFilePicker({
+            types: [
+                {
+                    description: "JavaScript & Html",
+                    accept: {
+                        "text/javascript": [".js"],
+                        "text/html": [".html", ".htm"]
+                    }
+                }
+            ]
+        });
         let file = await fileHandle.getFile();
         txtArea.value = await file.text();
     });
 
-    saveFile.addEventListener('click', async function() {
-
+    saveFile.addEventListener('click', async function () {
+        const writable = await fileHandle.createWritable();
+        // Write the contents of the file to the stream.
+        await writable.write(txtArea.value);
+        // Close the file and write the contents to disk.
+        await writable.close();
+        alert('Saved Successfully')
     });
-    
+
+    saveAsFile.addEventListener('click', async function () {
+        try {
+            const handle = await window.showSaveFilePicker({
+                types: [
+                    {
+                        description: 'Choose Extension',
+                        accept: {
+                            'text/javascript': ['.js'],
+                            'text/html': ['.html', '.htm'],
+                        },
+                    },
+                ],
+            });
+            const writable = await handle.createWritable();
+            await writable.write(txtArea.value);
+            // blob.stream().pipeTo(fileHandle.getWriter())
+            await writable.close();
+            return handle;
+        } catch (err) {
+            console.error(err.name, err.message);
+        }
+    });
+
+
+
+
+
+
+
+
 </script>
