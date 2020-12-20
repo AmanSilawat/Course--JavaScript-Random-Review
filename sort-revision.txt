@@ -50,7 +50,10 @@ Node.insertAdjacentElement('beforebegin', newEle);
 Node.insertAdjacentElement('afterbegin', newEle);
 Node.insertAdjacentElement('beforeend', newEle);
 Node.insertAdjacentElement('afterend', newEle);
-Node.append                     : Node.append(Node / 'textNode');
+Node.append()                   : Node.append(Node / 'textNode');
+Node.prepend()                  : ParentNode.prepend(strong, em, 'text node');  :: accept multiple node
+Node.before()                   : accept text node or node
+Node.after()                    : accept text node or node
 Node.appendChild(Node);         : only node
 Node.nextSibling                : text(included enter, space, text), node
 Node.nextElementSibling         : node
@@ -58,13 +61,13 @@ Node.previousSibling            : text(included enter, space, text), node
 Node.previousElementSibling     : node
 Node.cloneNode([deep])          : true-Infinity Dept / number
 Node.getBoundingClientRect()    : constainSomeProperty( x, y, width, height, top, right, bottom, left)
+Node.elementFromPoint(x, y)     : get element from a specified coordinates
 Node.outerHTML
 Node.innerHTML
 Node.contains()                 : document.body.contains(node);
 Node.childNodes                 : LIVE Node list, 
 Node.isEqualNode(otherNode)     : check equal tagName, tagAttributes, nodeValue, all nested node element and textNode( read: spaces, enters )
 
-ParentNode.prepend()            : ParentNode.prepend(strong, em, 'text node');  :: accept multiple node
 
 Element.toggleAttribute()       : Element.toggleAttribute(name [, force]);      :: force-accept boolean
 Element.setAttribute()          : Element.setAttribute(name, value);
